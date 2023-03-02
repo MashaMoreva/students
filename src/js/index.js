@@ -1,5 +1,5 @@
-import Student from "./js/student.js";
-import { sortArray } from "./js/utils.js";
+import Student from "./student.js";
+import { sortArray } from "./utils.js";
 
 const students = [
     new Student('Мискова', 'Мария', 'Дмитриевна', new Date(1991, 5, 14), 2022, 'фронтенд'),
