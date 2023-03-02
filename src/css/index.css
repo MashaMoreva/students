@@ -14,6 +14,14 @@
 .content {
     display: flex;
     gap: 15px;
+    align-items: start;
+}
+
+.forms {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .table {
@@ -22,10 +30,9 @@
 
 .form {
     border: 1px solid rgba(245, 245, 245, 0.512);
-    box-shadow: 5px 5px 5px rgba(245, 245, 245, 0.512);
+    box-shadow: 2px 2px 2px rgba(245, 245, 245, 0.512);
     border-radius: 20px;
-    width: 30%;
-    margin: 0 auto;
+    margin: 0;
     padding: 10px;
     display: flex;
     flex-direction: column;

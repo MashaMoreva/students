@@ -32,7 +32,7 @@ export default class Student {
     }
 
     getYearOfUniversityEnds() {
-        return this.yearOfUniversityStarts + 4
+        return this.yearOfUniversityStarts + 5
     }
 
     getYearOgUniversity() {

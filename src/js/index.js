@@ -45,7 +45,7 @@ titlesList.forEach((element) =>
     })
 )
 
-document.getElementById('form-student').addEventListener('submit', function (evt) {
+document.getElementById('form-add').addEventListener('submit', function (evt) {
     evt.preventDefault();
     students.push(new Student(
         document.getElementById('surname').value,
@@ -60,3 +60,16 @@ document.getElementById('form-student').addEventListener('submit', function (evt
 })
 
 renderStudentsList()
+
+// Вычисление года окончания обучения и номера курса
+// export function getEducationPeriod(startYear) {
+//   const endYear = startYear + 4;
+//   const currentYear = new Date().getFullYear();
+//   let course = '';
+//   if (currentYear > endYear) {
+//     course = 'закончил/а';
+//   } else {
+//     course = ${currentYear - startYear} курс;
+//   }
+//   return ${startYear}-${endYear} (${course});
+// }

@@ -22,15 +22,24 @@
             </thead>
             <tbody class="students-list" id="students-list"></tbody>
         </table>
-        <form id="form-student" class="form">
-            <input class="form-control" type="text" id="surname" placeholder="Фамилия">
-            <input class="form-control" type="text" id="name" placeholder="Имя">
-            <input class="form-control" type="text" id="patronymic" placeholder="Отчество">
-            <input class="form-control" type="date" id="birthDate">
-            <input class="form-control" type="number" id="yearOfUniversityStarts" placeholder="Год начала обучения">
-            <input class="form-control" type="text" id="faculty" placeholder="Факультет">
-            <button class="btn btn-light btn-sm">Добавить</button>
-        </form>
+        <section class="forms">
+            <form class="form" id="form-add" >
+                <input class="form-control" type="text" id="surname" placeholder="Фамилия">
+                <input class="form-control" type="text" id="name" placeholder="Имя">
+                <input class="form-control" type="text" id="patronymic" placeholder="Отчество">
+                <input class="form-control" type="date" id="birthDate">
+                <input class="form-control" type="number" id="yearOfUniversityStarts" placeholder="Год начала обучения">
+                <input class="form-control" type="text" id="faculty" placeholder="Факультет">
+                <button class="btn btn-light btn-sm">Добавить</button>
+            </form>
+            <form class="form" id="form-filter">
+                <input class="form-control" type="text" id="fullllName" placeholder="Ф. И. О. студента">
+                <input class="form-control" type="text" id="filter-faculty" placeholder="Факультет">
+                <input class="form-control" type="number" id="filter-yearOfUniversityStarts" placeholder="Год начала обучения">
+                <input class="form-control" type="number" id="filter-yearOfUniversityEnds" placeholder="Год окончания обучения">
+                <button class="btn btn-light btn-sm">Найти</button>
+            </form>
+        </section>
     </main>
     <script defer type="module" src="./src/js/index.js"></script>
 </body>
