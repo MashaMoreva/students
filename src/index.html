@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body class="page">
+    <main class="content">
+        <table class="table table-dark table-hover">
+            <thead class="title">
+                <th data-column="StudentFullName">Ф. И. О. студента</th>
+                <th data-column="faculty">Факультет</th>
+                <th data-column="birthDate">Дата рождения (возраст)</th>
+                <th data-column="faculty">Годы обучения (курс)</th>
+            </thead>
+            <tbody class="students-list" id="students-list"></tbody>
+        </table>
+        <form id="form-student" class="form">
+            <input class="form-control" type="text" id="surname" placeholder="Фамилия">
+            <input class="form-control" type="text" id="name" placeholder="Имя">
+            <input class="form-control" type="text" id="patronymic" placeholder="Отчество">
+            <input class="form-control" type="date" id="birthDate">
+            <input class="form-control" type="number" id="yearOfUniversityStarts" placeholder="Год начала обучения">
+            <input class="form-control" type="text" id="faculty" placeholder="Факультет">
+            <button class="btn btn-light btn-sm">Добавить</button>
+        </form>
+    </main>
+    <script defer type="module" src="./index.js"></script>
+</body>
+
+</html>

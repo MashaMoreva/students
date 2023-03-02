@@ -1,0 +1,50 @@
+@import url(./font/font.css);
+
+.page {
+    background-color:#212529;
+    /* min-width: 320px; */
+    max-width: 1280px;
+    margin: 30px auto;
+    /* padding: 0 15px; */
+    font-family: 'Comfortaa', Arial, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+.content {
+    display: flex;
+    gap: 15px;
+}
+
+.table {
+    width: 65%;
+}
+
+.form {
+    border: 1px solid rgba(245, 245, 245, 0.512);
+    box-shadow: 5px 5px 5px rgba(245, 245, 245, 0.512);
+    border-radius: 20px;
+    width: 30%;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 10px;
+}
+
+.form-control {
+   background-color: #212529;
+   border-color: rgba(245, 245, 245, 0.512);
+   color: #fff;
+}
+
+.btn {
+    width: max-content;
+    border-color: rgba(245, 245, 245, 0.512);
+    transition: transform .3 ease-in;
+}
+
+.btn:hover {
+    transform: scale(.95);
+}
