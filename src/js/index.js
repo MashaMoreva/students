@@ -2,8 +2,8 @@ import Student from "./student.js";
 import { sortArray } from "./utils.js";
 
 const students = [
-    new Student('Мискова', 'Мария', 'Дмитриевна', new Date(1991, 5, 14), 2022, 'фронтенд'),
     new Student('Морев', 'Никита', 'Александрович', new Date(1990, 1, 26), 2020, 'бекенд'),
+    new Student('Морева', 'Мария', 'Дмитриевна', new Date(1991, 5, 14), 2022, 'фронтенд'),
     new Student('Гудзенко', 'Ирина', 'Викторовна', new Date(1971, 10, 29), 2000, 'тестирование')
 ]
 
