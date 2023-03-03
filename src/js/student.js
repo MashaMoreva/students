@@ -9,7 +9,8 @@ export default class Student {
     }
 
     get StudentFullName() {
-        return this.surname + ' ' + this.name + ' ' + this.patronymic
+        // return this.surname + ' ' + this.name + ' ' + this.patronymic
+        return `${this.surname} ${this.name} ${this.patronymic}`
     }
 
     getBirthDate() {
@@ -18,7 +19,8 @@ export default class Student {
         let day = this.birthDate.getDate()
         if (day < 10) day = '0' + day
         if (month < 10) month = '0' + month
-        return day + '/' + month + '/' + year
+        return `${day}.${month}.${year}`
+        // return day + '/' + month + '/' + year
     }
 
     getAge() {
@@ -31,12 +33,15 @@ export default class Student {
         return age
     }
 
-    getYearOfUniversityEnds() {
+    get YearOfUniversityEnds() {
         return this.yearOfUniversityStarts + 5
     }
 
-    getYearOgUniversity() {
-        const today = new Date()
-        return today.getFullYear() - this.yearOfUniversityStarts
+    getYearOfUniversity() {
+        if (new Date().getFullYear() > this.YearOfUniversityEnds) {
+            return `закончил/закончила`
+        } else {
+            return `${new Date().getFullYear() - this.yearOfUniversityStarts} курс`
+        }
     }
 }
