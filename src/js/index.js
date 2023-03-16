@@ -19,13 +19,16 @@ function createStudent(student) {
     const faculty = document.createElement('td');
     const birthDate = document.createElement('td');
     const yearOfStudy = document.createElement('td');
+    const deleteButton = document.createElement('button')
 
     fullName.textContent = student.StudentFullName;
     faculty.textContent = student.faculty;
     birthDate.textContent = `${student.getBirthDate()} (${student.getAge()} год)`;
     yearOfStudy.textContent = `${student.yearOfUniversityStarts} - ${student.YearOfUniversityEnds} (${student.getYearOfUniversity()})`;
+    deleteButton.textContent = 'Удалить'
+    deleteButton.classList.add('delete-button')
 
-    studentItem.append(fullName, faculty, birthDate, yearOfStudy);
+    studentItem.append(fullName, faculty, birthDate, yearOfStudy, deleteButton);
 
     return studentItem
 }

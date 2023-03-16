@@ -13,22 +13,32 @@
 
 .content {
     display: flex;
+    flex-direction: column;
     gap: 15px;
     align-items: start;
 }
 
+.delete-button {
+    margin-left: 10px;
+    height: max-content;
+    width: max-content;
+    color: #bc7979de;
+    border: none;
+}
+
+.delete-button:hover {
+    transform: scale(.85);
+}
+
 .forms {
-    width: 35%;
+    padding: 10px;
+    width: 100%;
     display: flex;
-    flex-direction: column;
     gap: 15px;
 }
 
-.table {
-    width: 65%;
-}
-
 .form {
+    width: 50%;
     border: 1px solid rgba(245, 245, 245, 0.512);
     box-shadow: 2px 2px 2px rgba(245, 245, 245, 0.512);
     border-radius: 20px;
@@ -38,6 +48,9 @@
     flex-direction: column;
     align-items: end;
     gap: 10px;
+}
+#form-filter {
+    height: max-content;
 }
 
 .form-control {
