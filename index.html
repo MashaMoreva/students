@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Students</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="./src/css/index.css">
@@ -23,21 +24,27 @@
             <tbody class="students-list" id="students-list"></tbody>
         </table>
         <section class="forms">
-            <form class="form" id="form-add" >
-                <input class="form-control" type="text" id="surname" placeholder="Фамилия">
-                <input class="form-control" type="text" id="name" placeholder="Имя">
-                <input class="form-control" type="text" id="patronymic" placeholder="Отчество">
-                <input class="form-control" type="date" id="birthDate">
-                <input class="form-control" type="number" id="yearOfUniversityStarts" placeholder="Год начала обучения">
-                <input class="form-control" type="text" id="faculty" placeholder="Факультет">
+            <form class="form" id="form-add">
+                <input class="form-control" type="text" id="surname" placeholder="Фамилия" required>
+                <input class="form-control" type="text" id="name" placeholder="Имя" required>
+                <input class="form-control" type="text" id="patronymic" placeholder="Отчество" required>
+                <input class="form-control" type="date" id="birthDate" min="1900-01-01" required>
+                <input class="form-control" type="number" id="yearOfUniversityStarts" placeholder="Год начала обучения" min="2000"required>
+                <input class="form-control" type="text" id="faculty" placeholder="Факультет" required>
                 <button class="btn btn-light btn-sm">Добавить</button>
             </form>
             <form class="form" id="form-filter">
                 <input class="form-control" type="text" id="filter-fullName" placeholder="Ф. И. О. студента">
                 <input class="form-control" type="text" id="filter-faculty" placeholder="Факультет">
-                <input class="form-control" type="number" id="filter-yearOfUniversityStarts" placeholder="Год начала обучения">
-                <input class="form-control" type="number" id="filter-yearOfUniversityEnds" placeholder="Год окончания обучения">
-                <button class="btn btn-light btn-sm">Найти</button>
+                <input class="form-control" type="number" id="filter-yearOfUniversityStarts"
+                    placeholder="Год начала обучения">
+                <input class="form-control" type="number" id="filter-yearOfUniversityEnds"
+                    placeholder="Год окончания обучения">
+                    <div class="form-filter__button-group">
+                        <button class="btn btn-link btn-sm">Cбросить</button>
+                        <button class="btn btn-light btn-sm">Найти</button>
+                    </div>
+                
             </form>
         </section>
     </main>

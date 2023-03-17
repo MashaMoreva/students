@@ -1,7 +1,7 @@
 @import url(../font/font.css);
 
 .page {
-    background-color:#212529;
+    background-color: #212529;
     /* min-width: 320px; */
     max-width: 1280px;
     margin: 30px auto;
@@ -18,15 +18,24 @@
     align-items: start;
 }
 
-.delete-button {
-    margin-left: 10px;
+.button-group {
+    display: flex;
+    gap: 5px;
+}
+
+.button {
+    background-color: #212529;
     height: max-content;
     width: max-content;
-    color: #bc7979de;
+    color: #fff;
     border: none;
 }
 
-.delete-button:hover {
+.icon {
+    font-size: 25px;
+}
+
+.button:hover {
     transform: scale(.85);
 }
 
@@ -49,14 +58,15 @@
     align-items: end;
     gap: 10px;
 }
+
 #form-filter {
     height: max-content;
 }
 
 .form-control {
-   background-color: #212529;
-   border-color: rgba(245, 245, 245, 0.512);
-   color: #fff;
+    background-color: #212529;
+    border-color: rgba(245, 245, 245, 0.512);
+    color: #fff;
 }
 
 .btn {
@@ -67,4 +77,13 @@
 
 .btn:hover {
     transform: scale(.95);
+}
+
+.btn-link {
+    color: #fff;
+    border: none;
+}
+
+.btn-link:hover {
+    color: #fff;
 }

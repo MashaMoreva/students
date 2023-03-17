@@ -11,6 +11,3 @@ export function filterArray(array, property, value) {
     }
     return newArray
 }
-
-// array.forEach((item) =>
-//     (String(item[property]).includes(value)) ? newArray.push(item) : null)

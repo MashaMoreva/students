@@ -1,16 +1,15 @@
 export default class Student {
-    constructor(surname, name, patronymic, birthDate, yearOfUniversityStarts, faculty) {
-        this.surname = surname
+    constructor({ name, surname, lastname, birthday, studyStart, faculty }) {
         this.name = name
-        this.patronymic = patronymic
-        this.birthDate = birthDate
-        this.yearOfUniversityStarts = yearOfUniversityStarts
+        this.patronymic = surname
+        this.lastname = lastname
+        this.birthDate = new Date(birthday.split('T', 1)[0])
+        this.yearOfUniversityStarts = studyStart
         this.faculty = faculty
     }
 
     get StudentFullName() {
-        // return this.surname + ' ' + this.name + ' ' + this.patronymic
-        return `${this.surname} ${this.name} ${this.patronymic}`
+        return `${this.lastname} ${this.name} ${this.patronymic} `
     }
 
     getBirthDate() {
@@ -20,7 +19,6 @@ export default class Student {
         if (day < 10) day = '0' + day
         if (month < 10) month = '0' + month
         return `${day}.${month}.${year}`
-        // return day + '/' + month + '/' + year
     }
 
     getAge() {
@@ -34,7 +32,7 @@ export default class Student {
     }
 
     get YearOfUniversityEnds() {
-        return this.yearOfUniversityStarts + 5
+        return Number(this.yearOfUniversityStarts) + 5
     }
 
     getYearOfUniversity() {
