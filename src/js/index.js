@@ -62,8 +62,6 @@ async function renderStudentsList() {
     const response = await fetch('http://localhost:3000/api/students');
     const students = await response.json();
 
-    concole.log(StudentFullName)
-
     const handlers = {
         // onDone({ student }) {
         //     todoItem.done = !todoItem.done;
