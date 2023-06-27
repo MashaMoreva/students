@@ -1,54 +1,112 @@
 <!DOCTYPE html>
-<html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="./src/css/index.css">
-</head>
-
-<body class="page">
+<html>
+  <head>
+    <title>Панель управления студентами</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./src/styles/index.css" />
+  </head>
+  <body class="page">
     <main class="content">
-        <table class="table table-dark table-hover">
-            <thead class="title">
-                <th data-column="StudentFullName">Ф. И. О. студента</th>
-                <th data-column="faculty">Факультет</th>
-                <th data-column="birthDate">Дата рождения (возраст)</th>
-                <th data-column="faculty">Годы обучения (курс)</th>
-            </thead>
-            <tbody class="students-list" id="students-list"></tbody>
-        </table>
-        <section class="forms">
-            <form class="form" id="form-add">
-                <input class="form-control" type="text" id="surname" placeholder="Фамилия" required>
-                <input class="form-control" type="text" id="name" placeholder="Имя" required>
-                <input class="form-control" type="text" id="patronymic" placeholder="Отчество" required>
-                <input class="form-control" type="date" id="birthDate" min="1900-01-01" required>
-                <input class="form-control" type="number" id="yearOfUniversityStarts" placeholder="Год начала обучения" min="2000"required>
-                <input class="form-control" type="text" id="faculty" placeholder="Факультет" required>
-                <button class="btn btn-light btn-sm">Добавить</button>
-            </form>
-            <form class="form" id="form-filter">
-                <input class="form-control" type="text" id="filter-fullName" placeholder="Ф. И. О. студента">
-                <input class="form-control" type="text" id="filter-faculty" placeholder="Факультет">
-                <input class="form-control" type="number" id="filter-yearOfUniversityStarts"
-                    placeholder="Год начала обучения">
-                <input class="form-control" type="number" id="filter-yearOfUniversityEnds"
-                    placeholder="Год окончания обучения">
-                    <div class="form-filter__button-group">
-                        <button class="btn btn-link btn-sm">Cбросить</button>
-                        <button class="btn btn-light btn-sm">Найти</button>
-                    </div>
-                
-            </form>
-        </section>
-    </main>
-    <script defer type="module" src="./src/js/index.js"></script>
-</body>
+      <h1>Панель управления студентами</h1>
 
+      <div class="form-container">
+        <form class="form" id="studentForm">
+          <h2>Добавить студента</h2>
+          <label for="surname">Фамилия:</label>
+          <input class="form-control" type="text" id="surname" />
+
+          <label for="name">Имя:</label>
+          <input class="form-control" type="text" id="name" />
+
+          <label for="patronymic">Отчество: </label>
+          <input class="form-control" type="text" id="patronymic" />
+
+          <label for="birthdate">Дата рождения: </label>
+          <input class="form-control" type="date" id="birthdate" />
+
+          <label for="studyStart">Год начала обучения: </label>
+          <input class="form-control" type="number" id="studyStart" />
+
+          <label for="faculty">Факультет:</label>
+          <input class="form-control" type="text" id="faculty" />
+          <div id="errorContainer"></div>
+          <div id="successContainer"></div>
+          <button class="btn btn-secondary btn-sm" type="submit">
+            Добавить
+          </button>
+        </form>
+
+        <div class="filter">
+          <h2>Фильтр:</h2>
+
+          <label for="filterName">Ф. И. О.:</label>
+          <input class="form-control" type="text" id="filterName" />
+
+          <label for="filterFaculty">Факультет:</label>
+          <input class="form-control" type="text" id="filterFaculty" />
+
+          <label for="filterStudyStart">Год начала обучения:</label>
+          <input
+            class="form-control"
+            type="number"
+            id="filterStudyStart"
+            min="2000"
+            max="2023"
+          />
+
+          <label for="filterStudyEnd">Год окончания обучения:</label>
+          <input
+            class="form-control"
+            type="number"
+            id="filterStudyEnd"
+            min="2000"
+            max="2023"
+          />
+          <div class="button-group">
+            <button class="btn btn-link btn-sm" id="resetButton">
+              Сбросить фильтр
+            </button>
+            <button class="btn btn-secondary btn-sm" id="filterButton">
+              Найти
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <h2>Студенты:</h2>
+      <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th data-column="fullName">
+              Ф. И. О. студента
+              <span id="fullNameSortIndicator" class="sort-indicator"></span>
+            </th>
+            <th data-column="faculty">
+              Факультет
+              <span id="facultySortIndicator" class="sort-indicator"></span>
+            </th>
+            <th data-column="birthdate">
+              Дата рождения и возраст
+              <span id="birthdateSortIndicator" class="sort-indicator"></span>
+            </th>
+            <th data-column="studyStart">
+              Годы обучения и номер курса
+              <span id="studyStartSortIndicator" class="sort-indicator"></span>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </main>
+    <script type="module" src="main.js"></script>
+  </body>
 </html>

@@ -1,0 +1,122 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts.css);
+
+body {
+  padding: 0 40px;
+  font-family: "Comfortaa", Arial, Helvetica, sans-serif;
+  background-color: #212529;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 25px;
+}
+
+form,
+#filters {
+  margin-bottom: 20px;
+}
+
+input:focus {
+  border: none;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+  margin-bottom: 10px;
+}
+
+th {
+  cursor: pointer;
+}
+
+th.sort-asc:after {
+  content: " ▲";
+}
+
+th.sort-desc:after {
+  content: " ▼";
+}
+
+.error-message {
+  color: #f05a2b;
+  font-size: 11px;
+  margin-bottom: 0;
+}
+
+.success-message {
+  color: #6fdd8e;
+  font-size: 11px;
+  margin-bottom: 0;
+}
+
+.form-container {
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 50px;
+}
+
+.form {
+  display: grid;
+  width: 400px;
+}
+
+.filter {
+  width: 500px;
+}
+
+.sort-indicator {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #ccc transparent transparent transparent;
+  vertical-align: middle;
+  margin-left: 5px;
+  opacity: 0.3;
+}
+
+.sort-indicator.asc {
+  transform: rotate(180deg);
+}
+
+.sort-indicator.desc {
+  transform: rotate(0deg);
+}
+
+.sort-indicator.active {
+  opacity: 1;
+}
+
+.btn {
+  width: max-content;
+  justify-self: end;
+}
+
+.btn-link {
+  color: #fff;
+  border: none;
+}
+
+.btn-link:hover {
+  color: #5c636a;
+  background: transparent;
+  border: none;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  justify-content: end;
+}

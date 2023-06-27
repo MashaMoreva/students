@@ -1,0 +1,42 @@
+export const students = [
+  {
+    surname: "Морева",
+    name: "Мария",
+    patronymic: "Дмитриевна",
+    birthdate: new Date(1991, 5, 14),
+    studyStart: 2022,
+    faculty: "Фронтенд",
+  },
+  {
+    surname: "Морев",
+    name: "Никита",
+    patronymic: "Александрович",
+    birthdate: new Date(1990, 1, 26),
+    studyStart: 2007,
+    faculty: "Бэкенд",
+  },
+  {
+    surname: "Садчикова",
+    name: "Мирра",
+    patronymic: "Артёмовна",
+    birthdate: new Date(2011, 10, 4),
+    studyStart: 2019,
+    faculty: "Дизайн",
+  },
+  {
+    surname: "Мисков",
+    name: "Егор",
+    patronymic: "Дмитриевич",
+    birthdate: new Date(1998, 0, 27),
+    studyStart: 2021,
+    faculty: "Тестирование",
+  },
+  {
+    surname: "Садчиков",
+    name: "Всеволод",
+    patronymic: "Артёмович",
+    birthdate: new Date(2014, 6, 22),
+    studyStart: 2023,
+    faculty: "Проджект менеджер",
+  },
+];
